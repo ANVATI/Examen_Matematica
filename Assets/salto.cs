@@ -1,26 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class salto : MonoBehaviour
 {
     [SerializeField] Rigidbody2D Player;
-    [SerializeField] float time_after_jump;
+    
     [SerializeField] bool isJumping;
     [SerializeField] float fuerzadesalto;
+    [SerializeField] bool aumentarsalto;
 
 
     public void Saltoconfuerza(InputAction.CallbackContext Salto)
     {
-        time_after_jump = Time.time + 1f;
-     
-
-        if (Time.time > time_after_jump)
-        {
-            isJumping = true;
-        }
+      
+        
         if (isJumping)
         {
             Player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, fuerzadesalto));
@@ -41,5 +39,10 @@ public class salto : MonoBehaviour
         {
             isJumping = true;
         }
+    }
+
+    public  void aceleracion(InputAction.CallbackContext aumentarfuerzasalto)
+    {
+        fuerzadesalto =+100f;
     }
 }
