@@ -16,20 +16,19 @@ public class Jump : MonoBehaviour
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && isStarted && !isJump)
+        if (context.started && isStarted)
         {
             StartCoroutine(JumpCorroutine());
         }
-        if (context.canceled && !isJump)
+        if (context.canceled)
         {
             myRBD2D.AddForce(transform.up *  -m_Thrust * 0.2f, ForceMode2D.Impulse);
         }
     }
     IEnumerator JumpCorroutine()
     {
-        isJump = true;
         myRBD2D.AddForce(transform.up * m_Thrust, ForceMode2D.Impulse);
-        isStarted = false;             
+        isStarted = false;                       
         yield return new WaitForSeconds(1.5f);
         isStarted = true;
     }
