@@ -1,0 +1,45 @@
+{
+    "name": "Salto",
+    "maps": [
+        {
+            "name": "Salto",
+            "id": "de449c1a-554c-4bd9-803a-6092d2ed68d5",
+            "actions": [
+                {
+                    "name": "Salto",
+                    "type": "Value",
+                    "id": "4afec53f-fa92-4c76-8d54-c5f8b50f9708",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "eb296be4-8313-414f-94b3-9725d11babf3",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Salto",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "95aea083-e4f8-485b-b2ad-0136517d3410",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Salto",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
